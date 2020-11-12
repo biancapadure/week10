@@ -1,0 +1,36 @@
+<!-- Using HTML, CSS and JavaScript create an app which prompts the user for the length and width of a room. The app should then calculate the area of the carpet required and output the total area to the user. Make use of functions in this task. Think input - process - output. -->
+<html>
+    <body>
+        <p>Enter the width of the room in meters:</p>
+        <input type="text" name="lenght" id="width" value="2">
+
+        <br>
+
+        <p>Enter the lenght of the room in meters:</p>
+        <input type="text" name="lenght" id="lenght" value="4">
+
+        <br>
+        <br>
+
+        <button onclick="calculateArea(lenght.value, width.value)">Calculate</button>
+
+        <br>
+
+        <p id="result"></p>
+        <script>
+                function calculateArea(lenght, width){
+                    
+                    console.log("hi");
+                    lenght = parseInt(document.getElementById("lenght").value);
+                    width = parseInt(document.getElementById("width").value);
+                    returnResults(lenght, width);
+                    return lenght * width
+                }
+
+                function returnResults(lenght, width){
+                    document.getElementById("result").innerHTML="The carpet required for the area is: " + lenght * width + "&#178 meters"
+                }
+            
+        </script>
+    </body>
+</html>

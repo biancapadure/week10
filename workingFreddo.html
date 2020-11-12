@@ -1,0 +1,73 @@
+<!-- 
+    working with Nathan Wishart and Drew Marshall
+    date 8 oct 2020
+    vesion 2
+-->
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <div id="fulldiv">
+        <p> Freddo</p>
+
+        <label for="minimum_wage">Minimum wage:</label>
+        <input type="number" name="minimum_wage" id="minimum_wage" value="72"/>  
+        
+        <label for="cost_freddo">Cost of a Freddo:</label>
+        <input type="number" name="cost_freddo" id="cost_freddo" value="2"/>
+
+        <br/><br/>
+       <button value="calculate" onClick="cal2()">Calculate</button>
+
+        <p id="results"></p>
+        <img id="image">
+<script>
+// working by myself
+// added images for the week 10 session 2 task
+// version 3
+// date 12 nov 2020
+function cal2() {
+    var minimum_wage = parseFloat(document.getElementById("minimum_wage").value);
+    var cost_freddo = parseFloat(document.getElementById("cost_freddo").value);
+    var freddo_hour = minimum_wage / cost_freddo;
+    var wage_needed = 72 * cost_freddo;
+
+    if(minimum_wage<0 || cost_freddo<0 || freddo_hour<0 || wage_needed<0){
+        document.getElementById("results").innerHTML="Please enter positive numbers";
+        image = document.getElementById("image");
+        image.style.display="none"
+    }
+
+    else if (cost_freddo==5){
+        document.getElementById("results").innerHTML = "Freddos per hour: " +freddo_hour + "<br>For 72 Freddos you would need to earn: " +wage_needed;
+        document.getElementById("image").src="images/index.jpg"
+    }
+
+    else if (freddo_hour>=72){
+        document.getElementById("results").innerHTML = "Freddos per hour: " +freddo_hour + "<br>For 72 Freddos you would need to earn: " +wage_needed;
+        document.getElementById("image").src="images/HappyFreddo.jpg"
+    }
+
+    else if (freddo_hour<72){
+        document.getElementById("results").innerHTML = "Freddos per hour: " +freddo_hour + "<br>For 72 Freddos you would need to earn: " +wage_needed;
+        document.getElementById("image").src="images/GrumpyFreddo.jpg"
+    }
+
+
+
+    // if (year = 1999){
+    //     minimum_wage = 3.60;
+    //     cost_freddo = 0.5;
+    // }
+    // else if (year = 2017, minimum_wage = 7.50){
+    //     cost_freddo = 0.25;
+    // }
+    // else if (year = 2017, minimum_wage = 18){
+    //     cost_freddo = 0.25;
+    // }
+
+}
+</script>
+</body>
+</html>
